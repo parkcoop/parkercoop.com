@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+}
+
+.animation {
+  height: 100vh;
+  background-color: rgb(233, 233, 233);
+}
+
+.paper-plane {
+  height: 100px;
+  top: 50%;
+  position: absolute;
+  
+}
