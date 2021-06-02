@@ -1,8 +1,8 @@
 const gwCanvas = document.getElementById('garden-wars')
 const gwContext = gwCanvas.getContext('2d')
 
-const frameCount = 80
-
+const frameCount = 75
+let currentFrameIndex = 0
 
 
 
@@ -23,7 +23,7 @@ const currentFrame = (index) => {
     index = '0' + index
   }
   // console.log(index)
-  const deviceFolder = document.body.clientWidth > document.body.clientHeight ? 'desktop' : 'phone'
+  let deviceFolder = document.body.clientWidth > document.body.clientHeight ? 'desktop' : 'phone'
   return `assets/${deviceFolder}/ezgif-frame-${index}.jpg`
 
 }
@@ -42,6 +42,27 @@ gwCanvas.width = document.body.clientWidth
 gwCanvas.height = document.body.clientWidth > 991 ? document.body.clientHeight : screen.height
 img.width = gwCanvas.width
 img.height = gwCanvas.height
+
+       
+
+function resizeCanvas() {
+  console.log("RESIZE")
+  gwCanvas.width = document.body.clientWidth
+  gwCanvas.height = document.body.clientWidth > 991 ? document.body.clientHeight : screen.height
+  img.width = gwCanvas.width
+  img.height = gwCanvas.height
+  deviceFolder = document.body.clientWidth > document.body.clientHeight ? 'desktop' : 'phone'
+  updateImage(currentFrameIndex)
+}
+
+// window.onresize = resizeCanvas;
+$(document).on("pagecreate",function(event){
+  $(window).on("orientationchange",function(){
+    resizeCanvas()
+  });                   
+});      
+
+
 img.onload = function() {
   scaleToFit(this);
 }
@@ -76,6 +97,7 @@ const gwTitle = document.getElementById('garden-wars-title')
 scene.on('update', (e) => {
   let newFrame = (parseInt((e.scrollPos - scene.triggerPosition()) / 50))
   if (newFrame > 0 && newFrame < frameCount) {
+    currentFrameIndex = newFrame
     if (newFrame > 10) {
       gwTitle.classList.add('condensed')
     } else {

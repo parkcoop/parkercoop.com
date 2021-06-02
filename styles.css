@@ -275,9 +275,28 @@ html {
 	}
 }
 
+@media screen and (max-height: 500px) {
+
+  div#welcome-text {
+      padding: 10% !important;
+      padding-top: 6.5% !important;
+      font-size: 1em !important;
+  }
+
+  #scroll-down {
+    top: 90%;
+    font-size: 40px;
+  }
+
+
+}
+
 @media screen and (max-width: 991px) {
   #navigation-bar {
     display: none;
+    height: 0;
+    padding: 0;
+    margin: 0;
   }
   #projects div#garden-wars-title {
     font-size: 25px;
