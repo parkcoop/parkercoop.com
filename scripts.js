@@ -1,7 +1,7 @@
 const gwCanvas = document.getElementById('garden-wars')
 const gwContext = gwCanvas.getContext('2d')
 
-const frameCount = 118
+const frameCount = 80
 
 
 
@@ -23,7 +23,8 @@ const currentFrame = (index) => {
     index = '0' + index
   }
   // console.log(index)
-  return `assets/videogif/ezgif-frame-${index}.jpg`
+  const deviceFolder = document.body.clientWidth > document.body.clientHeight ? 'desktop' : 'phone'
+  return `assets/${deviceFolder}/ezgif-frame-${index}.jpg`
 
 }
 
@@ -58,11 +59,11 @@ const projectSection = document.getElementById('projects')
 const controller = new ScrollMagic.Controller();
 
 const scene = new ScrollMagic.Scene({
-  duration: 5000,
+  duration: 3500,
   triggerElement: projectSection,
   triggerHook: 0
 })
-.addIndicators()
+// .addIndicators()
 .setPin(projectSection)
 .addTo(controller)
 
@@ -86,11 +87,6 @@ scene.on('update', (e) => {
     projectsHeader.classList.remove('faded')
   }
 })
-
-
-function goToSection(section) {
-  console.log(section)
-}
 
 
 let idle = true;

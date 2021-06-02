@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <title>Parker Cooper</title>
 </head>
 <style>
@@ -29,58 +28,39 @@
         <img src="./assets/twitter.png" style="width: 20px; margin: 10px" />
       </a>
     </div>
-    <div id="welcome-text" style="
-    /* position: absolute; */
-    display: flex;
-    position: relative;
-    text-align: center;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    /* top: 50%; */
-    color: white;
-    font-size: 2em;">
-      <div id="typed-strings">
-        <img alt="Parker Cooper photo" src="assets/me2.png" style="width: 150px;height: 150px;margin-bottom: 25px;" />
+    <div id="welcome-text">
+      <div>
+        <img id="portrait" alt="Parker Cooper photo" src="assets/me2.png" />
         <p >Hello, my name is <b style="color: rgb(236, 78, 78);">Parker Cooper</b>, and</p>
         <p>I have a passion for <span id="typed"></span></p>
-        <!-- <button style="background-color: transparent;color: white; padding: 10px; border: 1px solid rgb(46, 147, 206);cursor: pointer;">Learn more</button> -->
       </div>
     </div>
     <a href="#navigation-bar">
       <i id="scroll-down" class="fas fa-angle-down"></i>
     </a>
   </section>
-  <section id="navigation-bar" style="padding: 10px 0px;background-color: rgb(39, 39, 39);z-index: 10000;position: sticky;top:0;">
-    <div style="display: flex; justify-content: space-between; padding: 0px 25%;color: white;">
-      <div class="unselectable" style="text-align: 'left'; color: white;">
-        <p style="margin: 0px; padding: 0px; font-weight: 600;">
+  <section id="navigation-bar">
+      <div id="text-logo" class="unselectable">
+        <p id="logo-name">
           PARKER COOPER
         </p>
-        <p style="font-size: 10px; margin: 0px">Full Stack Mobile/Web Engineer</p>
+        <p id="logo-title">Full Stack Mobile/Web Engineer</p>
       </div>
       <ul>
-        <a onclick="goToSection('about')">
+        <a href="#about-me">
           <li>
             ABOUT ME
           </li>
         </a>
-        <a onclick="goToSection('projects')">
+        <a href="#projects">
           <li>  
             PROJECTS
           </li>
         </a>
-        <a onclick="goToSection('contact')">
-          <li>  
-            CONTACT
-          </li>
-        </a>
       </ul>
-    </div>
   </section>
-  <section id="about-me" style="padding: 50px 25%;">
+  <section id="about-me" style="">
     <div id="info-section">
-      
       <h2>About</h2>
       <div style="display: flex;flex-direction: column;">
         <br />
@@ -92,7 +72,6 @@
         <br />
         <br />
         <br />
-        <!-- <img src="./assets/me.png" style="width: 75px" /> -->
       </div>
       <h2>Specialties</h2>
       <div id="tech-icons">
@@ -148,79 +127,6 @@
     </div>
     <canvas id="garden-wars">
   </section>
-  <!-- <section id="projects">
-    <h1>Garden Wars</h1>
-    <video src="assets/gardenwars.webm" />
-  </section> -->
-  <section id="contact">
-    <!-- CONTACT ME -->
-  </section>
-  <!-- <header 
-    id="header" 
-    class="" 
-    style="
-    display: flex;
-    position: sticky;
-    top: 0px;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-    justify-content: space-between;
-    /* width: 100%; */
-    padding: 0px 15%;
-    z-index: 5;
-    background: #1a1a1a;
-    ">
-     -->
-    <!-- <ul>
-      <li>
-        About
-      </li>
-      <li>
-        Skills
-      </li>
-      <li>
-        Work
-      </li>
-      <li>
-        Contact
-      </li>
-    </ul> -->
-    <!-- <div style="display: flex;flex-direction: row;">
-      <a target="_blank" href="https://www.linkedin.com/in/parkcoop">
-        <img src="./assets/linkedin.png" style="width: 20px; margin: 10px" />
-      </a>
-      <a target="_blank" href="https://www.github.com/parkcoop">
-        <img src="./assets/github.png" style="width: 20px; margin: 10px" />
-      </a>
-      <a target="_blank" href="https://medium.com/@parkcoop">
-        <img src="./assets/medium.png" style="width: 20px; margin: 10px" />
-      </a>
-      <a target="_blank" href="https://www.twitter.com/parkthecoop">
-        <img src="./assets/twitter.png" style="width: 20px; margin: 10px" />
-      </a>
-    </div>
-  </header> -->
-  <!-- <section id="about-me" style="width: 100%;margin: auto;padding: 50px 20%;">
-    <div style="display: flex;">
-      <img src="./assets/me.png" style="width: 200px; height: 200px;" />
-      <div>
-        <p>
-          Hello,<br />my name is Parker Cooper
-        </p>
-        <p>I have a passion for creating beautiful software</p>
-        
-      </div>
-    </div>
-  </section> -->
-  <!-- <section class="animation">
-    <img src="assets/me.png" class="paper-plane" />
-    <div class="info-section">
-      <p>
-        Hey, My name is Parker Cooper
-      </p>
-    </div>
-  </section> -->
 </body>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
