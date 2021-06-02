@@ -15,6 +15,30 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
+@keyframes nudge {
+  
+  0% {
+    transform: translate(-50%, -70%);
+  }
+  
+  33% {
+    transform: translate(-50%, -30%);
+  }
+  
+  66% {
+    transform: translate(-50%, -60%);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0
+  }
+}
+
 @keyframes show-nav {
   from {
     top: -100%;
@@ -38,6 +62,7 @@ body {
 section#about-me {
   background-color: white;
   /* height: 1000px; */
+  padding-top: 100px;
 }
 
 .unselectable {
@@ -95,17 +120,85 @@ body{
 #projects {
   height: 100vh;
   position: relative;
+  transition: all 0.5s;
 }
-
-#projects h1 {
+#projects h2 {
+  position: absolute;
+  color: white;
+  padding: 50px 25%;
+}
+h2 {
+  opacity: 1;
+}
+h2.faded {
+  opacity: 0;
+}
+#projects div#garden-wars-title {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 80px;
+  font-size: 75px;
+  width: 100%;
   color: white;
   text-shadow: 5px #2c343f;
+  transition: all 0.5s ease;
+
+}
+
+#scroll-down {
+  position: absolute; 
+  color: white;
+  top: 50%;
+  font-size: 5em;
+  left: 50%;
+  top:85%;
+  color: #CDCDCD;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+#scroll-down:hover {
+  color: white;
+}
+
+#scroll-down.idle-alert {
+  animation: nudge 0.5s forwards;
+}
+/* #projects #download-container {
+  display: flex;
+} */
+
+#projects div#garden-wars-title.condensed {
+  /* left: 20%; */
+  top: 90%;
+  left: 85%;
+  text-align: left;
+  padding: 10px;
+  width: 500px;
+  background: rgb(29, 29, 29);
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* color: rgb(36, 36, 36); */
+}
+
+#projects img#app-store-download {
+  transition: all 0.95s ease;
+  margin-bottom: 10px;
+}
+
+#projects p {
+  margin-bottom: 10px;
+}
+
+#projects div#garden-wars-title:not(.condensed) p,
+#projects div#garden-wars-title:not(.condensed) img {
+  opacity: 0;
 }
 
 #projects video {
@@ -120,12 +213,43 @@ body{
   font-size: 10em;
 }
 
+#tech-icons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 
+#tech-icons img {
+  height: 50px;
+  /* width: 50px; */
+  object-fit: scale-down;
+  margin: 25px;
+}
+html {
+	scroll-behavior: smooth;
+}
 
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
 
 @media screen and (max-width: 991px) {
   #navigation-bar {
     display: none;
+  }
+  #projects div#garden-wars-title {
+    font-size: 25px;
+  }
+  section#about-me {
+    padding: 10% !important;
+  }
+  #projects div#garden-wars-title.condensed {
+    top: 95%;
+    left: 50%;
+    width: 100%;
+    font-size: 10px;
   }
 }

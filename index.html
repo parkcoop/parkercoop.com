@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <title>Parker Cooper</title>
 </head>
 <style>
@@ -38,15 +40,19 @@
     /* top: 50%; */
     color: white;
     font-size: 2em;">
-    <div id="typed-strings">
-      <p >Hello, my name is <b style="color: rgb(236, 78, 78);">Parker Cooper</b>, and</p>
-      <p>I have a passion for <span id="typed"></span></p>
-      <button style="background-color: transparent;color: white; padding: 10px; border: 1px solid rgb(46, 147, 206);cursor: pointer;">Learn more</button>
+      <div id="typed-strings">
+        <img alt="Parker Cooper photo" src="assets/me2.png" style="width: 150px;height: 150px;margin-bottom: 25px;" />
+        <p >Hello, my name is <b style="color: rgb(236, 78, 78);">Parker Cooper</b>, and</p>
+        <p>I have a passion for <span id="typed"></span></p>
+        <!-- <button style="background-color: transparent;color: white; padding: 10px; border: 1px solid rgb(46, 147, 206);cursor: pointer;">Learn more</button> -->
+      </div>
     </div>
-    </div>
+    <a href="#navigation-bar">
+      <i id="scroll-down" class="fas fa-angle-down"></i>
+    </a>
   </section>
-  <section id="navigation-bar" style="padding: 10px 0px;background-color: rgb(39, 39, 39);z-index: 10000;">
-    <div style="display: flex; justify-content: space-between; padding: 0px 25%;position: sticky;color: white;">
+  <section id="navigation-bar" style="padding: 10px 0px;background-color: rgb(39, 39, 39);z-index: 10000;position: sticky;top:0;">
+    <div style="display: flex; justify-content: space-between; padding: 0px 25%;color: white;">
       <div class="unselectable" style="text-align: 'left'; color: white;">
         <p style="margin: 0px; padding: 0px; font-weight: 600;">
           PARKER COOPER
@@ -77,25 +83,69 @@
       
       <h2>About</h2>
       <div style="display: flex;flex-direction: column;">
-        <!-- <p>Creative Full Stack Mobile / Web Engineer with an eye for design and a love for creating, collaborating, and seeing first hand how useful software can really change people's lives</p> -->
         <br />
-        <!-- <p>Began learning code in 2016 when I was the Webmaster for a pre-health organization on campus</p> -->
+        <p>Creative Full Stack Mobile / Web Engineer with an eye for design and a love for creating, collaborating, and seeing first hand how useful software can really change people's lives. Driven by passion, I love the problem solving aspect of code, and more importantly the feeling of satisfaction after figuring it all out.</p>
         <br />
-        <p>Currently working at Media Query / PayCargo LLC as a Full Stack developer, where I lead the mobile React Native platform as well as work on our Angular web application and NodeJS backend regularly.</p>
-        <p></p>
+        <p>Currently working at Media Query / PayCargo LLC as a Full Stack developer, where I lead the mobile React Native platform as well as work on our Angular web application and NodeJS backend regularly. We're a small team of six, so "startup vibe" only begins to descibe it.</p>
         <br />
+        <p>In my spare time, I like to learn new technologies and apply them to new projects (that may or may not come to fruition!). But check out some of the ones that did below!</p>
         <br />
         <br />
         <br />
         <!-- <img src="./assets/me.png" style="width: 75px" /> -->
       </div>
       <h2>Specialties</h2>
-      <div style="display: flex;flex-direction: row;">
+      <div id="tech-icons">
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+          <img alt="javascript" src="/assets/tech/javascript.svg" />
+        </a>
+        <a target="_blank" href="https://www.typescriptlang.org/">
+          <img alt="typescript" src="/assets/tech/typescript.svg" />
+        </a>
+        <a target="_blank" href="https://reactjs.org/">
+          <img alt="react" src="/assets/tech/react.png" />
+        </a>
+        <a target="_blank" href="https://angular.io/">
+          <img alt="angular" src="/assets/tech/angular.svg" />
+        </a>
+        <a target="_blank" href="https://nodejs.org/en/">
+          <img alt="nodejs" src="/assets/tech/nodejs.png" />
+        </a>
+        <a target="_blank" href="https://www.mongodb.com/">
+          <img alt="mongodb" src="/assets/tech/mongodb.png" />
+        </a>
+        <a target="_blank" href="https://graphql.org/">
+          <img alt="graphql" src="/assets/tech/graphql.png" />
+        </a>
+        <a target="_blank" href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">
+          <img alt="sql" src="/assets/tech/sql.png" />
+        </a>
+        <a target="_blank" href="https://developer.android.com/">
+          <img alt="android" src="/assets/tech/android.svg" />
+        </a>
+        <a target="_blank" href="https://developer.apple.com/">
+          <img alt="ios" src="/assets/tech/ios.svg" />
+        </a>
+        <a target="_blank" href="https://www.java.com/en/">
+          <img alt="java" src="/assets/tech/java.png" />
+        </a>
+        <a target="_blank" href="https://developer.apple.com/swift/">
+          <img alt="swift" src="/assets/tech/swift.png" />
+        </a>
       </div>
     </div>
   </section>
   <section id="projects">
-    <h1>Garden Wars</h1>
+    <h2 id="projects-header">Projects</h2>
+    <div id="garden-wars-title">
+      <div>
+        <h1>Garden Wars</h1>
+        <p>Download on the app store</p>
+      </div>
+      <a target="_blank" href="https://apps.apple.com/us/app/garden-wars/id1540959871#?platform=iphone">
+        <img id="app-store-download" style="width: 105px;float:right;" src="assets/appstore.svg" />
+      </a>
+    </div>
     <canvas id="garden-wars">
   </section>
   <!-- <section id="projects">
@@ -173,6 +223,7 @@
   </section> -->
 </body>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js" integrity="sha512-RvUydNGlqYJapy0t4AH8hDv/It+zKsv4wOQGb+iOnEfa6NnF2fzjXgRy+FDjSpMfC3sjokNUzsfYZaZ8QAwIxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -181,5 +232,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js" integrity="sha512-ocsFo48WU8Xq6Y1Lwi7psXRAujG9E4TKNR4q1DbrKzaaxOMTEoao/a+mDoB+cYzY4lwbyxvqjkp/ZA1/MNlfsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/BezierPlugin.min.js" integrity="sha512-plyexAULVlTExvDn2yUZFJV9F8q+53MC/GpU9dEuNGXmrrI3J8Rcffjvxg3OOBALBvF+UILPLIBEoCeF2maqTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./scripts.js"></script>
+  <script src="./canvas.js"></script>
 
   </html>
