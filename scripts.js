@@ -38,29 +38,24 @@ const preloadImages = () => {
 
 const img = new Image()
 img.src = currentFrame(1)
-gwCanvas.width = document.body.clientWidth
-gwCanvas.height = document.body.clientWidth > 991 ? document.body.clientHeight : screen.height
-img.width = gwCanvas.width
-img.height = gwCanvas.height
+resizeCanvas()
 
        
 
 function resizeCanvas() {
-  console.log("RESIZE")
   gwCanvas.width = document.body.clientWidth
   gwCanvas.height = document.body.clientWidth > 991 ? document.body.clientHeight : screen.height
   img.width = gwCanvas.width
   img.height = gwCanvas.height
-  deviceFolder = document.body.clientWidth > document.body.clientHeight ? 'desktop' : 'phone'
-  updateImage(currentFrameIndex)
 }
 
-// window.onresize = resizeCanvas;
-$(document).on("pagecreate",function(event){
-  $(window).on("orientationchange",function(){
-    resizeCanvas()
-  });                   
-});      
+// $(document).on("pagecreate",function(event){
+//   $(window).on("orientationchange",function(){
+//     resizeCanvas()
+//     updateImage(currentFrameIndex)
+//     deviceFolder = document.body.clientWidth > document.body.clientHeight ? 'desktop' : 'phone'
+//   });                   
+// });      
 
 
 img.onload = function() {
@@ -115,17 +110,17 @@ let idle = true;
 
 document.addEventListener('scroll', () => {
   idle = false;
-  const canvasHeight = document.getElementById('canvas').getBoundingClientRect().height
+  const canvasHeight = document.getElementById('landing').getBoundingClientRect().height
   const navbar = document.getElementById("navigation-bar")
   const socialLinks = document.getElementById("social-links")
   const difference = canvasHeight - window.scrollY
   if (difference <= 250) {
     socialLinks.style.opacity = (difference / 300) - 0.25
-    // if (difference <= 0) {
-    //   navbar.classList.add("fixed")
-    // } else {
-    //   navbar.classList.remove("fixed")
-    // }
+    if (difference <= 0) {
+      navbar.classList.add("fixed")
+    } else {
+      navbar.classList.remove("fixed")
+    }
   } else {
     socialLinks.style.opacity = 1;
   }
@@ -156,3 +151,9 @@ function checkIdle() {
   }, 5000);
 }
 checkIdle()
+
+
+
+particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
